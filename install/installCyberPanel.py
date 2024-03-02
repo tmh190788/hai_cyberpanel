@@ -332,7 +332,7 @@ Signed-By: /etc/apt/keyrings/mariadb-keyring.pgp
 """
 
             if get_Ubuntu_release() > 21.00:
-                command = 'curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash -s -- --mariadb-server-version=10.11'
+                command = 'curl -LsS https://dlm.mariadb.com/3/MariaDB/mariadb_repo_setup | sudo bash -s -- --mariadb-server-version=10.11'
                 install.preFlightsChecks.call(command, self.distro, command, command, 1, 1, os.EX_OSERR, True)
             #     WriteToFile = open(RepoPath, 'w')
             #     WriteToFile.write(RepoContent)
@@ -383,7 +383,7 @@ gpgcheck=1
 
             else:
 
-                command = 'curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash -s -- --mariadb-server-version=10.11'
+                command = 'curl -LsS https://dlm.mariadb.com/3/MariaDB/mariadb_repo_setup | sudo bash -s -- --mariadb-server-version=10.11'
                 install.preFlightsChecks.call(command, self.distro, command, command, 1, 1, os.EX_OSERR, True)
 
                 command = 'yum remove mariadb* -y'
