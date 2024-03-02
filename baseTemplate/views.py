@@ -44,7 +44,7 @@ def versionManagement(request):
     currentVersion = VERSION
     currentBuild = str(BUILD)
 
-    u = "https://api.github.com/repos/usmannasir/cyberpanel/commits?sha=v%s.%s" % (latestVersion, latestBuild)
+    u = "https://api.github.com/repos/tmh190788/cyberpanel/commits?sha=v%s.%s" % (latestVersion, latestBuild)
     logging.writeToFile(u)
     r = requests.get(u)
     latestcomit = r.json()[0]['sha']
@@ -71,7 +71,7 @@ def versionManagement(request):
 def upgrade_cyberpanel(request):
     if request.method == 'POST':
         try:
-            upgrade_command = 'sh <(curl https://raw.githubusercontent.com/usmannasir/cyberpanel/stable/preUpgrade.sh || wget -O - https://raw.githubusercontent.com/usmannasir/cyberpanel/stable/preUpgrade.sh)'
+            upgrade_command = 'sh <(curl https://raw.githubusercontent.com/tmh190788/cyberpanel/stable/preUpgrade.sh || wget -O - https://raw.githubusercontent.com/tmh190788/cyberpanel/stable/preUpgrade.sh)'
             result = subprocess.run(upgrade_command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                     text=True)
 
@@ -161,7 +161,7 @@ def versionManagment(request):
     currentVersion = VERSION
     currentBuild = str(BUILD)
 
-    u = "https://api.github.com/repos/usmannasir/cyberpanel/commits?sha=v%s.%s" % (latestVersion, latestBuild)
+    u = "https://api.github.com/repos/tmh190788/cyberpanel/commits?sha=v%s.%s" % (latestVersion, latestBuild)
     logging.CyberCPLogFileWriter.writeToFile(u)
     r = requests.get(u)
     latestcomit = r.json()[0]['sha']
@@ -305,13 +305,13 @@ def design(request):
 
     ####### Fetch sha...
 
-    sha_url = "https://api.github.com/repos/usmannasir/CyberPanel-Themes/commits"
+    sha_url = "https://api.github.com/repos/tmh190788/CyberPanel-Themes/commits"
 
     sha_res = requests.get(sha_url)
 
     sha = sha_res.json()[0]['sha']
 
-    l = "https://api.github.com/repos/usmannasir/CyberPanel-Themes/git/trees/%s" % sha
+    l = "https://api.github.com/repos/tmh190788/CyberPanel-Themes/git/trees/%s" % sha
     fres = requests.get(l)
     tott = len(fres.json()['tree'])
     finalData['tree'] = []
@@ -339,7 +339,7 @@ def getthemedata(request):
 
         # logging.CyberCPLogFileWriter.writeToFile(str(data) + "  [themedata]")
 
-        url = "https://raw.githubusercontent.com/usmannasir/CyberPanel-Themes/main/%s/design.css" % data['Themename']
+        url = "https://raw.githubusercontent.com/tmh190788/CyberPanel-Themes/main/%s/design.css" % data['Themename']
 
         res = requests.get(url)
 

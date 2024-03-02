@@ -215,7 +215,7 @@ class PackagesManager:
 
                 modifyPack.save()
 
-                ## Fix https://github.com/usmannasir/cyberpanel/issues/998
+                ## Fix https://github.com/tmh190788/cyberpanel/issues/998
 
                 # from plogical.IncScheduler import IncScheduler
                 # isPU = IncScheduler('CalculateAndUpdateDiskUsage', {})
